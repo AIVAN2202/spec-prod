@@ -24,7 +24,16 @@ export default async function main(toolchain: "respec" | "bikeshed" | string) {
 			await sh("pip3 --version", "buffer");
 			await sh(`pip3 install bikeshed --quiet`, {
 				output: "stream",
-				cwd: ACTION_DIR,
+								export interface ShOptions {
+					output?: "stream" | "buffer";
+					env?: Re					export interfa					export interface ShOptions {
+						output?: "stream" | "buffer";
+						env?: Record<string, string | number | boolean | undefined>;
+						cwd?: string;
+					}
+					
+					export async function sh(
+						cmd: string,: ACTION_DIR,
 				env: {
 					PYTHONUSERBASE,
 				},
